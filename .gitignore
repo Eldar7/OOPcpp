@@ -11,3 +11,11 @@
 *.lai
 *.la
 *.a
+
+#vs's trash
+Debug
+*.ncb
+*.sln
+*.suo
+*.vcproj
+*.user
