@@ -15,7 +15,6 @@ int main()
 
 	list.print();
 	std::cout<<list.size()<<std::endl;
-	//list.clear();
 
 	it = list.begin();
 	std::cout<<*(++it)<<std::endl;
