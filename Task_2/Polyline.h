@@ -30,19 +30,17 @@ public:
 		}
 		return length;
 	}
-	friend std::ostream & operator << (std::ostream & os, const Polyline& ipolyline)
+	void GetInfo(std::ostream& ostream) const
 	{
-		os<<"Polyline: "<<ipolyline.GetName().c_str()<<" {";
-		for (XList<Point>::iterator it = ipolyline.m_plist.begin(); it != ipolyline.m_plist.end(); ++it)
+		ostream<<"Polyline: "<<GetName().c_str()<<" {";
+		for (XList<Point>::iterator it = m_plist.begin(); it != m_plist.end(); ++it)
 		{
-			os<<(*it).GetPosition().c_str();
-			if (it.GetNext() != ipolyline.m_plist.end())
-				os<<", ";
+			ostream<<(*it).GetPosition().c_str();
+			if (it.GetNext() != m_plist.end())
+				ostream<<", ";
 		}
-		
-		os<<"}, amount = "<<ipolyline.m_plist.size();
-		os<<", lenghth = "<<ipolyline.GetLength();
-		return os;
+		ostream<<"}, amount = "<<m_plist.size();
+		ostream<<", lenghth = "<<GetLength();
 	}
 private:
 	XList<Point> m_plist;

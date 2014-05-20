@@ -34,15 +34,10 @@ public:
 	{
 		return rightup;
 	}
-	virtual void Print()
+	void GetInfo(std::ostream& ostream) const
 	{
-		std::cout<<"Rectangle: "<<GetName().c_str()<<" {"<<leftdown.GetPosition().c_str()<<", "<<rightup.GetPosition().c_str()<<"}, area = "<<GetArea()<<std::endl;
-	}
-	friend std::ostream & operator << (std::ostream & os, const Rect& irect)
-	{
-		os <<"Rectangle: "<<irect.GetName().c_str()<<" {"<<irect.Getleftdown().GetPosition().c_str();
-		os <<", "<<irect.Getrightup().GetPosition().c_str()<<"}, area = "<<irect.GetArea();
-		return os;
+		ostream <<"Rectangle: "<<GetName().c_str()<<" {"<<Getleftdown().GetPosition().c_str();
+		ostream <<", "<<Getrightup().GetPosition().c_str()<<"}, area = "<<GetArea();
 	}
 protected:
 	Point leftdown;

@@ -29,14 +29,10 @@ public:
 	{
 		return m_radius;
 	}
-	void Print() const
+	void GetInfo(std::ostream& ostream) const
 	{
-		std::cout<<"Circle: "<<GetName().c_str()<<" {"<<m_center.GetPosition().c_str()<<", "<<m_radius<<"}, area = "<<GetArea()<<std::endl;
-	}
-	friend std::ostream & operator << (std::ostream & os, const Circle& icircle)
-	{
-		os << "Circle: "<<icircle.GetName().c_str()<<" {"<<icircle.GetCenter().GetPosition().c_str()<<", "<<icircle.GetRadius()<<"}, area = "<<icircle.GetArea();
-		return os;
+		ostream<<"Circle: "<<GetName().c_str()<<" {"<<GetCenter().GetPosition().c_str();
+		ostream<<", "<<GetRadius()<<"}, area = "<<GetArea();
 	}
 private:
 	Point m_center;

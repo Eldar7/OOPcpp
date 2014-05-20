@@ -20,6 +20,7 @@ int main()
 //	delete pnt;
 
 	Rect rect("rect", point, smth);
+	rect.Print();
 //	rect.Print();
 	Square* sq = NULL;
 	try
@@ -28,6 +29,7 @@ int main()
 		Point b(3,3);
 		sq = new Square("ABBA", a, b);
 		sq->Print();
+		std::cout<<*sq<<std::endl;
 	}
 	catch (std::exception& e)
 	{
