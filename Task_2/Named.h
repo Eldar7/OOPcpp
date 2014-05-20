@@ -24,9 +24,13 @@ public:
 	{
 		m_name = new_name;
 	}
-	friend std::ostream & operator << (std::ostream & os, const Named& inamed)
+	virtual void GetInfo(std::ostream& ostream) const
 	{
-		os << inamed.GetName();
+		ostream << GetName();
+	}
+	friend std::ostream & operator << (std::ostream & os, const Named& named)
+	{
+		named.GetInfo(os);
 		return os;
 	}
 private:
