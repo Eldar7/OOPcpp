@@ -14,6 +14,7 @@
 
 #vs's trash
 Debug
+test
 *.ncb
 *.sln
 *.suo
