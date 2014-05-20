@@ -50,10 +50,6 @@ public:
 		distance = sqrt(pow(m_x - iotherpoint.GetX(),2)+pow(m_y - iotherpoint.GetY(),2));
 		return distance;
 	}
-	void Print() const
-	{
-		std::cout<<"Point: "<<GetName().c_str()<<" "<<GetPosition().c_str()<<std::endl;
-	}
 	friend std::ostream & operator << (std::ostream & os, const Point& ipoint)
 	{
 		os <<"Point: "<<ipoint.GetName().c_str()<<" "<<ipoint.GetPosition().c_str();

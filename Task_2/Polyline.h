@@ -30,19 +30,6 @@ public:
 		}
 		return length;
 	}
-	void Print() const
-	{
-		std::cout<<"Polyline: "<<GetName().c_str()<<" {";
-		for (XList<Point>::iterator it = m_plist.begin(); it != m_plist.end(); ++it)
-		{
-			std::cout<<(*it).GetPosition().c_str();
-			if (it.GetNext() != m_plist.end())
-				std::cout<<", ";
-		}
-		
-		std::cout<<"}, amount = "<<m_plist.size();
-		std::cout<<", lenghth = "<<GetLength()<<std::endl;
-	}
 	friend std::ostream & operator << (std::ostream & os, const Polyline& ipolyline)
 	{
 		os<<"Polyline: "<<ipolyline.GetName().c_str()<<" {";

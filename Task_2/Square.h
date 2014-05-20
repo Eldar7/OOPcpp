@@ -25,10 +25,6 @@ public:
 		if ((rightup.GetX() - leftdown.GetX())!=(rightup.GetY() - leftdown.GetY()))
 			throw isnotsq;
 	}
-	void Print()
-	{
-		std::cout<<"Square: "<<GetName().c_str()<<" {"<<leftdown.GetPosition().c_str()<<", "<<rightup.GetPosition().c_str()<<"}, area = "<<GetArea()<<std::endl;
-	}
 	friend std::ostream & operator << (std::ostream & os, const Square& isquare)
 	{
 		os <<"Square: "<<isquare.GetName().c_str()<<" {"<<isquare.Getleftdown().GetPosition().c_str();

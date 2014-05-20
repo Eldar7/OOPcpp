@@ -50,6 +50,7 @@ int main()
 	pl.AddPoint(point);
 	pl.AddPoint(smth);
 	pl.Print();
+	std::cout<<pl<<std::endl;
 
 	Polyline* pln = new Polyline("pln");
 	pln->AddPoint(point);
@@ -63,6 +64,7 @@ int main()
 	std::cout<<rect2<<std::endl;
 	std::cout<<(*sq)<<std::endl;
 	std::cout<<(*pln)<<std::endl;
+	rect2.Print();
 
 	delete pln;
 //	std::cout<<(*pln)<<std::endl;

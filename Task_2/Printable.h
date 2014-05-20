@@ -11,9 +11,9 @@ public:
 	Printable(std::string name):Named(name)
 	{
 	}
-	void Print()
+	void Print() const
 	{
-		std::cout<<GetName().c_str()<<std::endl;
+		std::cout<<*this<<std::endl;
 	}
 };
 
