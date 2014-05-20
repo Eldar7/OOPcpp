@@ -30,7 +30,8 @@ public:
 		}
 		return length;
 	}
-	void GetInfo(std::ostream& ostream) const
+private:
+	virtual void ToStream(std::ostream& ostream) const
 	{
 		ostream<<"Polyline: "<<GetName().c_str()<<" {";
 		for (XList<Point>::iterator it = m_plist.begin(); it != m_plist.end(); ++it)

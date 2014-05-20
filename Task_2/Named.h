@@ -24,16 +24,19 @@ public:
 	{
 		m_name = new_name;
 	}
-	virtual void GetInfo(std::ostream& ostream) const
+	friend std::ostream & operator << (std::ostream & os, const Named& named)
+	{
+		named.ToStream(os);
+		return os;
+	}
+	virtual ~Named()
+	{
+	}
+private:
+	virtual void ToStream(std::ostream& ostream) const
 	{
 		ostream << GetName();
 	}
-	friend std::ostream & operator << (std::ostream & os, const Named& named)
-	{
-		named.GetInfo(os);
-		return os;
-	}
-private:
 	std::string m_name;
 };
 

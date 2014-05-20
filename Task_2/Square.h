@@ -25,7 +25,8 @@ public:
 		if ((rightup.GetX() - leftdown.GetX())!=(rightup.GetY() - leftdown.GetY()))
 			throw isnotsq;
 	}
-	void GetInfo(std::ostream& ostream) const
+private:
+	virtual void ToStream(std::ostream& ostream) const
 	{
 		ostream <<"Square: "<<GetName().c_str()<<" {"<<Getleftdown().GetPosition().c_str();
 		ostream <<", "<<Getrightup().GetPosition().c_str()<<"}, area = "<<GetArea();

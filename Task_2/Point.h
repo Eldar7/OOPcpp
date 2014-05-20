@@ -8,8 +8,7 @@ class Point : public Shape, public Printable
 public:
 	Point()
 	{
-		m_x = 0;
-		m_y = 0;
+		SetPosition(0,0);
 	}
 	Point (int const& xi, int const& yi)
 	{
@@ -50,7 +49,8 @@ public:
 		distance = sqrt(pow(m_x - iotherpoint.GetX(),2)+pow(m_y - iotherpoint.GetY(),2));
 		return distance;
 	}
-	void GetInfo(std::ostream& ostream) const
+private:
+	virtual void ToStream(std::ostream& ostream) const
 	{
 		ostream <<"Point: "<<GetName().c_str()<<" "<<GetPosition().c_str();
 	}

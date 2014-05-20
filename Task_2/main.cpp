@@ -68,12 +68,18 @@ int main()
 	std::cout<<(*pln)<<std::endl;
 	rect2.Print();
 
+	std::cout<<Shape::GetCount()<<std::endl;
+
 	delete pln;
 //	std::cout<<(*pln)<<std::endl;
 
 	delete sq;
 //	std::cout<<(*sq)<<std::endl;
 
+	std::cout<<Shape::GetCount()<<std::endl;
+
+	Named *myshape = new Point(0,0);
+	delete myshape;
 	std::cout<<Shape::GetCount()<<std::endl;
 	
 	return 0;

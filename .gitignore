@@ -14,6 +14,7 @@
 
 #vs's trash
 Debug
+Release
 test
 *.ncb
 *.sln

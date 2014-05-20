@@ -29,7 +29,8 @@ public:
 	{
 		return m_radius;
 	}
-	void GetInfo(std::ostream& ostream) const
+private:
+	virtual void ToStream(std::ostream& ostream) const
 	{
 		ostream<<"Circle: "<<GetName().c_str()<<" {"<<GetCenter().GetPosition().c_str();
 		ostream<<", "<<GetRadius()<<"}, area = "<<GetArea();

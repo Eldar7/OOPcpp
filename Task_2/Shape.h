@@ -7,29 +7,29 @@ class Shape : public virtual Named
 public:
 	Shape()
 	{
-		m_count++;
+		sm_count++;
 	}
 	Shape(std::string name):Named(name)
 	{
-		m_count++;
+		sm_count++;
 	}
 	Shape (const Shape& shape):Named(shape)
 	{
-		m_count++;
+		sm_count++;
 	}
-	~Shape()
+	virtual ~Shape()
 	{
-		m_count--;
+		sm_count--;
 	}
 	static unsigned int GetCount()
 	{
-		return m_count;
+		return sm_count;
 	}
 
 private:
-	static unsigned int m_count;
+	static unsigned int sm_count;
 };
 
-unsigned int Shape::m_count = 0;
+unsigned int Shape::sm_count = 0;
 
 #endif

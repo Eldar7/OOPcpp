@@ -34,7 +34,8 @@ public:
 	{
 		return rightup;
 	}
-	void GetInfo(std::ostream& ostream) const
+private:
+	virtual void ToStream(std::ostream& ostream) const
 	{
 		ostream <<"Rectangle: "<<GetName().c_str()<<" {"<<Getleftdown().GetPosition().c_str();
 		ostream <<", "<<Getrightup().GetPosition().c_str()<<"}, area = "<<GetArea();
