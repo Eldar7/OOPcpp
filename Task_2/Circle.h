@@ -7,12 +7,12 @@
 class Circle : public Shape, public Printable
 {
 public:
-	Circle (Point const& icenter, int const& iradius=0)
+	Circle (Point const& icenter, double const& iradius=0)
 	{
 		m_center = icenter;
 		m_radius = iradius;
 	}
-	Circle (std::string const& name, Point const& icenter, int const& iradius=0) : Named(name)
+	Circle (std::string const& name, Point const& icenter, double const& iradius=0) : Named(name)
 	{
 		m_center = icenter;
 		m_radius = iradius;

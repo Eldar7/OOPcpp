@@ -10,11 +10,11 @@ public:
 	{
 		SetPosition(0,0);
 	}
-	Point (int const& xi, int const& yi)
+	Point (double const& xi, double const& yi)
 	{
 		SetPosition(xi,yi);
 	}
-	Point(std::string const& name, int const& xi=0, int const& yi=0):Named(name)
+	Point(std::string const& name, double const& xi=0, double const& yi=0):Named(name)
 	{
 		SetPosition(xi,yi);
 	}

@@ -14,7 +14,7 @@ int main()
 	XList<Shape*>* shlist = new XList<Shape*>;
 	Point* point0 = new Point("simple_point");
 	Point* point1 = new Point(1,1);
-	Point* point2 = new Point(-2.2,2);
+	Point* point2 = new Point(-2.2, 2);
 	Circle* circle = new Circle("bublic", *point0,5);
 	Rect* rect1 = new Rect(*point1, *point2);
 	Square* square = new Square(*point0, *point1);
@@ -23,10 +23,29 @@ int main()
 	pl->AddPoint(*point0);
 	pl->AddPoint(*point1);
 	pl->AddPoint(*point2);
+	Square* sq = NULL;
+	try
+	{
+		sq = new Square("ABBA", *point1, *point2);
+		shlist->push_front(sq);
+	}
+	catch (std::exception& e)
+	{
+		std::cout << e.what() << std::endl;
+	}
+	try
+	{
+		sq = new Square("ABBA2", *point1, *point0);
+		shlist->push_front(sq);
+	}
+	catch (std::exception& e)
+	{
+		std::cout << e.what() << std::endl;
+	}
 
 	circle->Print();
 
-	std::cout<<Shape::GetCount()<<std::endl; //18
+	std::cout<<Shape::GetCount()<<std::endl; //21
 
 	shlist->push_back(point0);
 	shlist->push_back(rect2);
@@ -36,14 +55,15 @@ int main()
 	shlist->push_back(pl);
 	shlist->push_back(point2);
 	shlist->push_front(point1);
+	
 
-	std::cout<<Shape::GetCount()<<std::endl; //18
+	std::cout<<Shape::GetCount()<<std::endl; //21
 
 	for (XList<Shape*>::iterator it = shlist->begin(); it != shlist->end(); ++it)
 	{
 		std::cout<<**it<<std::endl;
 	}
-	std::cout<<Shape::GetCount()<<std::endl; //18
+	std::cout<<Shape::GetCount()<<std::endl; //21
 	
 	for (XList<Shape*>::iterator it = shlist->begin(); it != shlist->end(); ++it)
 	{
@@ -52,5 +72,10 @@ int main()
 	std::cout<<Shape::GetCount()<<std::endl; //0
 
 	delete shlist;
+
+	std::cout<<Shape::GetCount()<<std::endl; //0
+	Named *myshape = new Point(0, 0);
+	delete myshape;
+	std::cout<<Shape::GetCount()<<std::endl; //0
 	return 0;
 }
